@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.friendbook.dto.UserDTO;
 import com.friendbook.model.User;
 import com.friendbook.service.impl.UserServiceImpl;
-import com.friendbook.utility.CaptchaUtility;
+//import com.friendbook.utility.CaptchaUtility;
 import com.friendbook.utility.SignupResponse;
 
 @RestController
@@ -22,8 +22,8 @@ public class UserRestController {
 	@Autowired
 	private UserServiceImpl userService;
 
-	@Autowired
-	private CaptchaUtility captchaUtility;
+//	@Autowired
+//	private CaptchaUtility captchaUtility;
 	
 	@Autowired
     private ModelMapper modelMapper;
@@ -31,11 +31,11 @@ public class UserRestController {
 	@PostMapping("/signup")
 	public ResponseEntity<SignupResponse> signup(@RequestBody UserDTO dto) {
 
-		boolean captchaVerified = captchaUtility.verifyCaptcha(dto.captchaToken);
-		if (!captchaVerified) {
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-					.body(new SignupResponse(false, "Captcha failed. Please try again."));
-		}
+//		boolean captchaVerified = captchaUtility.verifyCaptcha(dto.captchaToken);
+//		if (!captchaVerified) {
+//			return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+//					.body(new SignupResponse(false, "Captcha failed. Please try again."));
+//		}
 		User user = modelMapper.map(dto, User.class);
 		
 		boolean ok = userService.registerUser(user);

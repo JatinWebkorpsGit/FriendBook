@@ -4,7 +4,7 @@ public class UserDTO {
 	public String fullName;
 	public String email;
 	public String password;
-	public String captchaToken;
+	//public String captchaToken;
 
 	public String getFullName() {
 		return fullName;
@@ -30,12 +30,12 @@ public class UserDTO {
 		this.password = password;
 	}
 
-	public String getCaptchaToken() {
-		return captchaToken;
-	}
-
-	public void setCaptchaToken(String captchaToken) {
-		this.captchaToken = captchaToken;
-	}
+//	//public String getCaptchaToken() {
+//		return captchaToken;
+//	}
+//
+//	public void setCaptchaToken(String captchaToken) {
+//		this.captchaToken = captchaToken;
+//	}
 
 }

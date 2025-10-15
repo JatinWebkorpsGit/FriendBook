@@ -1,18 +1,17 @@
 document.getElementById("signupForm").addEventListener("submit", function(e) {
 	e.preventDefault();
 
-	const recaptchaResponse = grecaptcha.getResponse();
-	if (!recaptchaResponse) {
-		document.getElementById("message").innerText = "Please complete the CAPTCHA.";
-		document.getElementById("message").style.color = "red";
-		return;
-	}
+//	const recaptchaResponse = grecaptcha.getResponse();
+//	if (!recaptchaResponse) {
+//		document.getElementById("message").innerText = "Please complete the CAPTCHA.";
+//		document.getElementById("message").style.color = "red";
+//		return;
+//	}
 
 	const data = {
 		fullName: document.getElementById("fullName").value,
 		email: document.getElementById("email").value,
-		password: document.getElementById("password").value,
-		captchaToken: recaptchaResponse
+		password: document.getElementById("password").value
 	};
 
 	fetch("/api/signup", {
